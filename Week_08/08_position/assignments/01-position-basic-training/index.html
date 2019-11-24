@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <title>Review Lab</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <section class="big-text">
+    <h1 class="main-heading">Positioning Into the 3rd Dimension</h1>
+    <h2>position: static;</h2>
+    <hr>
+    <div>Each</div>
+    <ul>
+      <li>of</li>
+      <li>these</li>
+      <li>items</li>
+      <li>has</li>
+    </ul>
+    <aside>static</aside>
+    <footer>positioning (all HTML elements do)</footer>
+
+    <!-- position: relative; -->
+    <h2>position: relative; out of the box (looks just like position: static;)</h2>
+    <hr>
+    <div class="relative-item stationary">Relative item</div>
+    <div class="relative-item stationary">Relative item</div>
+    <div class="relative-item stationary">Relative item</div>
+
+    <!-- position: relative; with movement-->
+    <h2>position: relative; with item moved</h2>
+    <hr>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item-moved">Relative item on the move... (top: -100px, left: 50px;)</div>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item">Relative item</div>
+
+    <!-- position: relative; w/ zindex-->
+    <h2>position: relative; with z-index</h2>
+    <hr>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item-moved-behind">Relative item on the move... (top: -100px, left: 50px;)</div>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item">Relative item</div>
+    <div class="relative-item">Relative item</div>
+
+    <!-- position: absolute-->
+    <h2>position: absolute; (but where is it?)</h2>
+    <hr>
+    <div class="absolute-item">Absolute item, look at me! I'm flying! How did I get up here? What's going on with me these days? I feel a little, light headed perhaps...</div>
+
+    <!-- position: absolute; inside position: relative;-->
+    <h2>position: absolute; inside position: relative;</h2>
+    <hr>
+    <section class="relative-container">
+      <div class="absolute-item-trapped">I'm absolute but something is holding me back. It's tough being a box in a box.</div>
+    </section>
+
+    <!-- position: relative items in relative container -->
+    <h2>position: relative; items in a relative container</h2>
+    <hr>
+    <section class="relative-container-2">
+      <div class="size relative-item-1">Relative Item</div>
+      <div class="size relative-item-2">Relative Item</div>
+      <div class="size relative-item-3">Relative Item</div>
+      <div class="size relative-item-4">Relative Item</div>
+      <div class="size relative-item-5">Relative Item</div>
+    </section>
+
+    <!-- position: absolute experiment -->
+    <h2 id="absolute-experiment">position: absolute experiments w/ z-index in relative container</h2>
+    <hr>
+    <section class="relative-container-2">
+      <div class="size-absolute absolute-item-11">Absolute Item, z-index: 12;</div>
+      <div class="size-absolute absolute-item-12">Absolute Item, z-index: -4;</div>
+      <div class="size-absolute absolute-item-13">Absolute Item, z-index: 8;</div>
+      <div class="size-absolute absolute-item-14">Absolute Item, z-index: 3;</div>
+      <div class="size-absolute absolute-item-15">Absolute Item, z-index: 6;</div>
+    </section>
+
+    <!-- position: fixed -->
+    <h2>position: fixed; - pretty basic</h2>
+    <hr id="footer-margin">
+    <section class="fixed-item">Fixed footer</section>
+    
+  </section><!-- close .big-text-->
+
+</body>
+</html>

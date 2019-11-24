@@ -1,0 +1,22 @@
+/* Starter styles */
+
+main {
+  margin: 3%;
+  width: 97%;
+}
+
+.shrink-main {
+  width: 77%;
+}
+
+aside {
+  background-color: midnightblue;
+  color: white;
+  height: 100%;
+  margin: 3%;
+  width: 17%;
+}
+
+.show-hide {
+  display: none;
+}

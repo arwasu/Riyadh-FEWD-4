@@ -1,0 +1,36 @@
+/* Starter styles */
+
+.relative-item {
+  background-color: pink;
+}
+
+.stationary {
+  background-color: limegreen;
+  color: white;
+}
+
+.absolute-item {
+  background-color: lightblue;
+}
+
+.relative-container {
+  border: 1px solid #222;
+  height: 600px;
+  width: 600px;
+}
+
+.absolute-item-1 {
+}
+.absolute-item-2 {
+}
+.absolute-item-3 {
+}
+
+.fixed-item {
+  background-color: midnightblue;
+  color: #fff;
+}
+
+.fixed-item li {
+  list-style: none;
+}

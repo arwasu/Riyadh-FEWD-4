@@ -1,0 +1,227 @@
+/* Globals */
+
+body {
+  font-size: 10px;
+  margin: 0;
+}
+
+h1 {
+  padding-top: 10px;
+}
+
+div {
+  padding-bottom: 30px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.code {
+  font-family: Courier, monospace;
+}
+
+/*
+ * 1- Responsive layout with one break point
+ * This is a mobile first approach, so the styles outside the media query relate to the mobile view
+ * Styles inside the media query relate to the larger screens
+ * In this specific example, we've got a pretty standard flexbox column on mobile that becomes a row on desktop screens
+ */
+.container-mq1 {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .container-mq1 {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.item-mq1 {
+  background-image: linear-gradient( 135deg, #ABDCFF, #0396FF);
+  height: 125px;
+  margin: 1%;
+  width: 100%;
+}
+
+/*
+  2- Responsive layout with sidebar
+  Another mobile first approach, so read the media query styles as desktop only
+  Very similar to the last example, just minor tweaks
+  Notice how we can control the size of the flexbox elements with percentage widths - this is best practice
+*/
+
+.container-sidebar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 960px) {
+  .container-sidebar {
+    flex-direction: row;
+  }
+}
+
+.example-body {
+  background-image: linear-gradient( 135deg, #FCCF31, #F55555);
+  height: 250px;
+  margin: 1% 0;
+  padding: 0;
+  width: 98%;
+}
+
+@media screen and (min-width: 960px) {
+  .example-body {
+    margin: 1%;
+    width: 73%;
+  }
+}
+
+.example-sidebar {
+  background-image: linear-gradient( 135deg, #FCCF31, #F55555);
+  height: 250px;
+  margin: 1% 0;
+  padding: 0;
+  width: 98%;
+}
+
+@media screen and (min-width: 960px) {
+  .example-sidebar {
+    margin: 1%;
+    width: 23%;
+  }
+}
+
+/*
+  3- Responsive CSS Grid with two breakpoints
+  With CSS Grid, our approach is a little different
+  A full page grid is being assumed here, but that's the use case 99/100 when I've been using it
+  The fractional unit propertly is natively responsive so we don't have to worry about column widths
+  And remember the implicit grid - rows are getting created automatically, so we don't have to worry about that either
+  All we do is switch `grid-template-columns` at the media query break points
+  In this example we have multiple media queries making ranges - mobile, tablet and desktop
+*/
+
+.container-mq2 {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .container-mq2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .container-mq2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-mq2 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.item-mq2 {
+  background-image: radial-gradient( circle at top right, #81FBB8, #28C76F);
+  height: 125px;
+  margin: 1% 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+/*
+  display: inline-block is a crude responsive method
+  It only works based on the size of the containers width
+  The drawback is that this layout doesnt really have breakpoints
+  It can work well with a small row of items but not much else
+  It uses text-align on the container to move the items around in a row
+*/
+.container-ib {
+  text-align: center;
+}
+
+.item {
+  height: 100px;
+  padding: 25px;
+  width: 100px;
+}
+
+/* 
+  How about a stripped gradient 
+  The way this works is you have to define color stops
+  So this is basically saying, 
+  repeating-linear-gradient(direction, color 1 start, color 1 end with color stop)
+  In our example, we're saying, 
+    1- give me a 10px wide yellow stripe from 0 to 10px
+    2- Then give me a purple striple from 10px to 20px
+    3- repeating-linear-gradient will repeat those indefinitely inside of this container
+    4- 45deg tilts the whole thing a bit
+
+*/
+.item-ib {
+  background-image: repeating-linear-gradient(
+    45deg,
+    yellow,
+    yellow 10px,
+    purple 10px,
+    purple 20px 
+  );
+  display: inline-block;
+}
+
+.big-text {
+  font-size: 24px;
+  margin: 0 25px 25px 25px;
+}
+
+
+/*
+  3- Responsive grid with two breakpoints using ems
+  Notice have you have to calculate for three box models now - one at each break point
+  Ems handle sizing based on the font-size of the parent item, which inherently makes them related
+  I find this maddening but there is merit: you can adjust sizes of padding/margin/font all together
+  This gives you the ability to group media queries into size changes instead of just layout changes
+*/
+.container-mq3 {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: 1fr;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 1200px) {
+  .container-mq3 {
+    font-size: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-mq3 {
+    font-size: 25px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.item-mq3 {
+  background-image: radial-gradient( circle at top right, #FDEB71, #F8D800);
+  height: 10em;
+}
+
+

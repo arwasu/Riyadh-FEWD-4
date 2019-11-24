@@ -1,0 +1,210 @@
+/* Global declarations */
+.big-text {
+  font-size: 24px;
+  margin: 3%;
+}
+
+p {
+  margin: 15px 0;
+}
+
+hr {
+  width: 100%;
+}
+
+.relative-item {
+  background-color: pink;
+  margin: 1%;
+  padding: 1%;
+  position: relative;
+}
+
+.stationary {
+  background-color: limegreen;
+  color: white;
+}
+
+/*
+  Relative positioning
+  Note how the orange div moved on top of the other divs
+  It is controlled by top and left (also bottom and right properties do this)
+*/
+.relative-item-moved {
+  background-color: orange;
+  border: 1px solid #000;
+  margin: 1%;
+  padding: 1%;
+  position: relative;
+  top: -100px;
+  left: 50px;
+}
+
+/*
+  Relative positioning behind
+  Note how the orange div moved on top of the other divs
+  It is controlled by top and left (also bottom and right properties do this)
+*/
+.relative-item-moved-behind {
+  background-color: yellow;
+  border: 1px solid #000;
+  margin: 1%;
+  padding: 1%;
+  position: relative;
+  top: -100px;
+  left: 50px;
+  z-index: -1;
+}
+
+/*
+  Absoulte positioning
+  Look at how this box is way at the top of the page
+  That's because absolutely positioned elements are placed realtive to the viewport
+*/
+.absolute-item {
+  background-color: lightblue;
+  border: 1px solid #000;
+  left: 900px;
+  margin: 1%;
+  padding: 1%;
+  position: absolute;
+  top: 5px;
+}
+
+
+/*
+  Absolute positioning inside relative containers
+  This is an interesting spin on things
+  Relative containers trap absolute elements in them
+  So if you nest a position:absolute; in a position:relative; you get tight control
+  It's a good technique when you need it
+*/
+.relative-container {
+  border: 1px solid #222;
+  height: 400px;
+  position: relative;
+  width: 400px;
+}
+
+.absolute-item-trapped {
+  background-color: maroon;
+  border: 1px solid #000;
+  color: white;
+  height: 200px;
+  left: 89px;
+  margin: 1%;
+  padding: 1%;
+  position: absolute;
+  top: 25px;
+  width: 200px;
+}
+
+/*
+  position: relative experiments, with great power comes great responsibility.
+  Big question - why do these blocks look so weird?
+  HINT: what are they positioned relative to?
+*/
+
+.relative-container-2 {
+  border: 1px solid #222;
+  height: 600px;
+  position: relative;
+  width: 800px;
+}
+
+.size {
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+
+.relative-item-1 {
+  background-color: rgba(0, 15, 179, 0.5);
+  left: 300px;
+  top: 100px;
+}
+.relative-item-2 {
+  background-color: rgba(0, 179, 116, 0.5);
+  left: 250px;
+  top: 200px;
+}
+.relative-item-3 {
+  background-color: rgba(179, 176, 0, 0.5);
+  left: 400px;
+  top: 200px;
+}
+.relative-item-4 {
+  background-color: rgba(179, 6, 0, 0.5);
+  left: 275px;
+  top: 250px;
+}
+.relative-item-5 {
+  background-color: rgba(97, 82, 81, 0.5);
+  left: 350px;
+  top: 250px;
+}
+
+
+/*
+  position: absolute experiments with z-index, with great power comes great responsibility.
+  Notice how the elements stack on each, play around the with the z-indexes to understand them comprehensively.
+  Use z-index like salt: just sprinkle a little in there when you need it.
+  You can easily see how multiple z-indicies would be hard to keep straight.
+*/
+#absolute-experiment {
+  margin: 800px 0 0 0;
+}
+
+.size-absolute {
+  color: white;
+  height: 200px;
+  position: absolute;
+  width: 200px;
+}
+
+.absolute-item-11 {
+  background-color: rgba(0, 15, 179, 1);
+  left: 300px;
+  top: 50px;
+  z-index: 12;
+}
+.absolute-item-12 {
+  background-color: rgba(0, 179, 116, 1);
+  left: 125px;
+  top: 100px;
+  z-index: -4;
+}
+.absolute-item-13 {
+  background-color: rgba(179, 176, 0, 1);
+  left: 475px;
+  top: 100px;
+  z-index: 8;
+}
+.absolute-item-14 {
+  background-color: rgba(179, 6, 0, 1);
+  left: 212.5px;
+  top: 225px;
+  z-index: 3;
+}
+.absolute-item-15 {
+  background-color: rgba(97, 82, 81, 1);
+  left: 387.5px;
+  top: 225px;
+  z-index: 6;
+}
+
+/*
+  position: fixed - pretty basic, it just goes wherever you put and stays there
+*/
+#footer-margin {
+  margin-bottom: 100px;
+}
+
+.fixed-item {
+  background-color: midnightblue;
+  bottom: 0;
+  color: #fff;
+  height: 40px;
+  margin: 0;
+  position: fixed;
+  width: 500px;
+}

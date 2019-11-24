@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <title>Responsive Layout Basics</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body> 
+
+  <section class="big-text">
+    <h1>Responsive Layout Basics</h1>
+
+    <h2>Responsive flexbow layout using single media query.</h2>
+    <p>Tablet (768px+) the layout is a row, mobile and tablet devices will see a column. Flipping the <span class="code">flex-direction</span> property's value from its default (<span class="code">row</span>) to <span class="code">column</span> on mobile is all you have to do. And remember - flexbox natively takes over the width of children, so they are natively responsive.</p>
+    <hr>
+    <div class="container-mq1">
+      <div class="item-mq1"></div>
+      <div class="item-mq1"></div>
+      <div class="item-mq1"></div>
+      <div class="item-mq1"></div>
+    </div>
+
+    <h2>Flexbox sidebar layout using single media query</h2>
+    <p>Sidebars generally require more space to display properly, so this media query is at 960px. We just stack the sidebar below the main content, which is a best practice but really isn't very good IRL. This is one of the reasons sidebars have all but disappeared from modern web design.</p>
+    <hr>
+    <div class="container-sidebar">
+      <main class="example-body"></main>
+      <aside class="example-sidebar"></aside>
+    </div>
+
+    <h2>Responsive CSS grid layout using cascading media queries</h2>
+    <p>With CSS Grid, our approach is a little different. The fractional unit property (<span class="code">fr</span>) is natively responsive so we don't have to worry about column widths. And remember the implicit grid - rows are getting created automatically, so we don't have to worry about that either. All we do is switch <span class="code">grid-template-columns</span> at the media query break points. In this example we have multiple media queries making ranges - mobile (under 480px), phablet/tablet (480px-768px), desktop (769px - 1200px) and wide desktop (1200px+).</p>
+    <hr>
+    <div class="container-mq2">
+      <div class="item-mq2"></div>
+      <div class="item-mq2"></div>
+      <div class="item-mq2"></div>
+      <div class="item-mq2"></div>
+      <div class="item-mq2"></div>
+      <div class="item-mq2"></div>
+      <div class="item-mq2"></div>
+      <div class="item-mq2"></div>
+    </div>
+
+    <h2>Using display: inline-block; (natively responsive)</h2>
+    <p>This is dirty but it works. You can use <span class="code">inline-block</span> declarations on the children and they will natively drop to new lines as the screen gets smaller. You don't have to use media queries which gives you less control over what's happening. This can be useful for aligning small icons but little else.</p>
+    <hr>
+    <div class="container-ib">
+      <div class="item item-ib"></div>
+      <div class="item item-ib"></div>
+      <div class="item item-ib"></div>
+      <div class="item item-ib"></div>
+    </div>
+
+    <h2>Responsive CSS grid layout using cascading media queries and ems</h2>
+    <p>The <span class="code">fr</span> unit makes <span class="code">ems</span> mostly obsolete for grids but you can use it with <span class="code">grid-gap</span>. The idea is that you can just adjust the font-size instead of the grid-gap itself in this example. How useful is this? Potentially somewhat useful if you've got exotic padding that needs to scale down to other devices. I find it maddening to link font-sizes and padding together but some people swear by this method.</p>
+    <hr>
+    <div class="container-mq3">
+      <div class="item-mq3">This</div>
+      <div class="item-mq3">technique</div>
+      <div class="item-mq3">uses</div>
+      <div class="item-mq3"><span class="code">ems</span></div>
+      <div class="item-mq3">which</div>
+      <div class="item-mq3">can</div>
+      <div class="item-mq3">be</div>
+      <div class="item-mq3">confusing</div>
+    </div>
+</body>
+</html>
